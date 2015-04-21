@@ -1,0 +1,18 @@
+body {
+  background-image: image-url("main_bkg.gif");
+  background-repeat: repeat-x;
+  @include font-main;
+  color: $main_font_color;
+  background-color: $bkg_color;
+}
+
+a {
+  color: $main_font_color;
+  text-decoration: none;
+  @include single-transition(color, 0.25s, ease-in-out, 0);
+}
+
+a:hover {
+  color: $internal_link_color;
+}
+

@@ -1,0 +1,74 @@
+/* SEARCH */
+
+// module base declaration
+%m-search {
+  position: relative;
+
+  //component
+  & input {
+    padding-left: 5px;
+    border: none;
+    @include border-radius(5px);
+    @include single-box-shadow(#777777, 0px, 1px, 4px, 0px, inset);
+    background: #fff;
+  }
+
+  //component
+  & button {
+    //reset
+    background: none;
+    cursor: pointer;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    // style
+    display: inline;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: image-url("search_btn.png") no-repeat 6px 6px;
+  }
+}
+
+//module instantiation with modifier for main menu
+.m-search.main {
+  @extend %m-search;
+  height: $main-menu-height;
+  padding: 10px 15px 0px 15px;
+  top: -8px;
+  cursor: default;
+
+  //component
+  & input {
+    width: 163px;
+    height: 23px;
+  }
+
+  //component
+  & button {
+    right: 18px;
+    top: 10px;
+  }
+
+  //state
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+//module instantiation with modifier for footer menu
+.m-search.footer {
+  @extend %m-search;
+
+  //component
+  & input {
+    width: 182px;
+    height: 25px;
+  }
+
+  //component
+  & button {
+    right: 0px;
+    top: 2px;
+  }
+}

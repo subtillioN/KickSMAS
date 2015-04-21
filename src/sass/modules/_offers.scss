@@ -1,0 +1,128 @@
+/* OFFERS */
+
+@mixin m-offer_bkg($bkg) {
+  background: image-url($bkg) no-repeat 5px 10px;
+}
+
+// module base declaration
+%m-offer {
+  display: inline;
+  float: left;
+  margin-right: 3px;
+  width: 230px;
+  height: 173px;
+  text-align: center;
+  line-height: 0.05rem;
+  font-size: 0.75rem;
+  letter-spacing: -0.042rem;
+}
+
+// module instantiations
+.m-offer-veh {
+  @extend %m-offer;
+  position: relative;
+  letter-spacing: -0.062rem;
+  $leftMargin: 27px;
+
+  //component
+  .m-offer-veh--img {
+    position: absolute;
+    float: left;
+    top: 52px;
+    left: -5px;
+  }
+
+  //component
+  .m-offer-veh--year {
+    position: absolute;
+    float: left;
+    top: 10px;
+    left: $leftMargin;
+    font-size: 1.1rem;
+
+  }
+
+  //component
+  .m-offer-veh--model {
+    position: absolute;
+    float: left;
+    top: 25px;
+    left: $leftMargin;
+    font-weight: bold;
+    font-size: 1.4rem;
+  }
+}
+
+//module
+.m-offer-lease {
+  @include m-offer_bkg("offer_lease_box.jpg");
+  @extend %m-offer;
+  padding-top: 33px;
+}
+
+//module
+.m-offer-cash {
+  @include m-offer_bkg("offer_cash_box.jpg");
+  @extend %m-offer;
+  padding-top: 45px;
+}
+
+//module
+.m-offer-apr {
+  @include m-offer_bkg("offer_apr_box.jpg");
+  @extend %m-offer;
+  padding-top: 45px;
+}
+
+//module
+.m-offer-arrow {
+  display: inline;
+  float: left;
+  width: 19px;
+  height: 173px;
+  background: #FFF image-url("arrow.png") no-repeat center;
+  margin-left: -5px;
+  cursor: pointer;
+
+  // state
+  @include single-transition(margin-left, 0.25s, ease-in-out, 0);
+  &:hover {
+    margin-left: -2px;
+  }
+}
+
+// shared components
+.m-offer--text1 {
+  font-weight: bold;
+  font-size: 0.8rem;
+  letter-spacing: -0.042rem;
+}
+.m-offer--text2 {
+  font-size: 1.25rem;
+  letter-spacing: -0.072rem;
+}
+.m-offer--text3 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.m-offer--text4 {
+  line-height: 0.95rem;
+}
+.m-offer--super {
+  font-weight: bold;
+  font-size: 0.75rem;
+  vertical-align: super;
+}
+.m-offer--number {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.m-offer--details-btn {
+  display: block;
+  background: image-url("details_btn.png") no-repeat 72px 8px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  height: 10px;
+  padding-top: 16px;
+  padding-left: 20px;
+}

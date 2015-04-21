@@ -1,0 +1,97 @@
+/* FOOTER */
+
+// module instantiation
+.m-footer-menu {
+  list-style-type: none;
+  font-size: 0.75rem;
+  padding-left: 0px;
+
+  //component
+  & > li {
+    padding-bottom: 3px;
+  }
+
+  //component
+  & > li:first-child {
+    padding-bottom: 13px;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  //component
+  & > li > a {
+    font-size: 0.75rem;
+    font-weight: normal;
+  }
+
+}
+
+// footer social menu button background mixin
+@mixin m-footer-menu--social_a($type) {
+  background: image-url("icon_"+$type+".png") no-repeat 0px 0px;
+  display: block;
+  padding: 5px 30px 5px;;
+}
+
+// module with modifier
+.m-footer-menu.social {
+
+  // component
+  & > li:first-child {
+    padding-bottom: 8px;
+  }
+
+  //component with modifier
+  & > .facebook > a {
+    @include m-footer-menu--social_a("facebook");
+  }
+
+  //component
+  & > .twitter > a {
+    @include m-footer-menu--social_a("twitter");
+  }
+
+  //component
+  & > .youtube > a {
+    @include m-footer-menu--social_a("youtube");
+  }
+}
+
+// module instantiation
+.m-footer-info {
+  font-size: 0.7rem;
+
+  //component
+  & p {
+    display: inline-block;
+  }
+
+  //component
+  & ul {
+    display: inline-block;
+    list-style-type: none;
+  }
+
+  //component
+  & li {
+    display: inline-block;
+    padding: 0 7px 0 3px;
+    border-right: 1px solid black;
+  }
+
+  //component
+  & li:last-child {
+    border-right: none;
+  }
+
+  //component
+  .m-footer-info--menu {
+    display: inline-block;
+    padding-left: 20px;
+  }
+
+  //component
+  .m-footer-info--rss-menu {
+    padding-left: 67px;
+  }
+}

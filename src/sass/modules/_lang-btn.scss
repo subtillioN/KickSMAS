@@ -1,0 +1,55 @@
+/* LANGUAGE SELECTION BUTTONS */
+
+// m-lang-btn background mixin
+@mixin m-lang-button($img, $bkgPos) {
+  background: image-url($img+".png") no-repeat $bkgPos;
+
+  //component
+  & ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  //component
+  & ul > li {
+    font-weight: bold;
+  }
+
+  //state
+  &:active {
+    background: image-url($img+"_active.png") no-repeat $bkgPos;
+  }
+}
+
+//module instantiation with modifier
+.m-lang-button.footer {
+  @include m-lang-button("lang_btn", 46px 3px);
+  margin-top: 85px;
+
+  & ul > li {
+    display: inline-block;
+    padding: 0 29px 0 0;
+    font-size: 0.75rem;
+  }
+}
+
+//module instantiation with modifier
+.m-lang-button.main {
+  @include m-lang-button("lang_btn_vert", 0px 3px);
+  position: relative;
+  top: 10px;
+  left: 20px;
+  padding-right: 40px;
+
+  //component
+  & ul {
+    height: $main-menu-height;
+  }
+
+  //component
+  & ul > li {
+    display: block;
+    font-size: 0.6rem;
+    padding: 0px 0px 0 15px;
+  }
+}

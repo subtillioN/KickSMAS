@@ -1,0 +1,132 @@
+/* MAIN MENU */
+
+$logo_btn_width: 200px;
+
+//module instantiation
+.m-mainnav {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  height: $main-menu-height;
+
+  //component
+  & > ul {
+    list-style-type: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 0;
+  }
+
+  //component
+  & > ul > li {
+    display: inline-block;
+    position: relative;
+    margin: -19px -5px 0 0;
+    top: -22px;
+    background: image-url("main_menu_groove.png") no-repeat;
+    height: $main-menu-height;
+    cursor: pointer;
+    @include single-transition(background-color, 0.25s, ease-in-out, 0);
+  }
+
+  //component
+  & > ul > li:hover {
+    background-color: rgba(0, 0, 0, 0.025);
+  }
+
+  //component
+  & > ul > li > a {
+    position: relative;
+    height: $main-menu-height;
+    top: 13px;
+    padding: 0px 16px 10px 16px;
+    letter-spacing: -0.07em;
+  }
+
+  //component with modifier
+  & > ul > li.m-mainnav--logo {
+    background: image-url("logo.png") no-repeat 0px 5px;
+    width: $logo_btn_width;
+    top: 10px;
+    & > a {
+      width: $logo_btn_width;
+      height: $main-menu-height;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  //state
+  & > ul > li.m-mainnav--logo:hover {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  //component
+  .m-mainnav--veh {
+    & a {
+      background: image-url("menu_arrow_btn.png") no-repeat 108px 0px;
+      padding-right: 46px;
+    }
+  }
+
+  //component
+  .m-mainnav--lang {
+    top: -13px;
+  }
+}
+
+//module instantiation
+.m-mainnav-sub {
+  background: image-url("subnav_bkg.png") repeat-x;
+  height: 45px;
+  top: -45px;
+  @include single-transition(top, 0.25s, ease-in-out, 0);
+
+  //state
+  &.is-shown {
+    top: 0px;
+  }
+
+  //component
+  .m-mainnav-sub--header {
+    display: inline-block;
+    position: relative;
+    top: -20px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  //component
+  & ul {
+    display: inline-block;
+    position: relative;
+    list-style-type: none;
+    padding: 0;
+    top: -20px;
+    left: 120px;
+  }
+
+  //component
+  & ul > li {
+    display: inline-block;
+    position: relative;
+    margin: 0px 0px 0 0;
+  }
+
+  //component
+  & ul > li > a {
+    font-size: 0.8rem;
+    color: white;
+    padding: 4px 20px;
+    @include border-radius(18px);
+    @include transition(all 0.3s ease-in);
+  }
+
+  //component state
+  & ul > li > a:hover {
+    @include single-box-shadow(#480809, 0px, 1px, 4px, 0px, inset);
+    background: #901216;
+  }
+}
+

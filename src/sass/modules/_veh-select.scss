@@ -1,0 +1,171 @@
+/* VEHICLE SELECTION */
+
+// module
+.m-veh-sel-dropdown {
+  display: inline-block;
+
+  //component
+  & > a {
+    display: inline-block;
+    background: #ededed image-url("gray_arrow.png") no-repeat 40px 21px;
+    border-left: 1px solid #cacaca;
+    color: #9d9d9d;
+    font-size: 1.0rem;
+    font-weight: bold;
+    padding: 22px 45px 20px 70px;
+  }
+}
+
+//module
+.m-offer-types {
+  display: inline-block;
+
+  //component
+  & > p {
+    display: inline-block;
+    font-weight: bold;
+    margin: 0 10px 0 40px;
+  }
+}
+
+//module instantiation
+.m-offer-types-check {
+  display: inline-block;
+  position: relative;
+  top: -18px;
+
+  //component
+  & > input[type="checkbox"] {
+    display: none;
+  }
+
+  //component
+  & > input[type="checkbox"] + label span {
+    display: block;
+    position: absolute;
+    float: center;
+    top: 15px;
+    left: 16px;
+    width: 52px;
+    height: 28px;
+    background: image-url("m-offer-types_toggles.png") no-repeat;
+    cursor: pointer;
+  }
+
+  //component
+  & > label {
+    display: inline-block;
+    position: relative;
+    float: center;
+    width: 85px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+
+// module with modifier
+.m-offer-types-check.lease > input[type="checkbox"]:checked + label span {
+  background: image-url("m-offer-types_toggles.png") no-repeat 0 -28px;
+}
+
+// module with modifier
+.m-offer-types-check.cash > input[type="checkbox"]:checked + label span {
+  background: image-url("m-offer-types_toggles.png") no-repeat 0 -56px;
+}
+
+// module with modifier
+.m-offer-types-check.apr > input[type="checkbox"]:checked + label span {
+  background: image-url("m-offer-types_toggles.png") no-repeat 0 -84px;
+}
+
+//module
+.m-location {
+
+  //component
+  .m-location--title {
+    font-size: 0.85rem;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+  }
+
+  //component
+  .m-location--data {
+    display: block;
+    width: 100px;
+    background: image-url("icon_write.png") no-repeat right 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+  }
+}
+
+//module
+.m-veh-sel {
+
+  //component
+  .m-veh-sel--close-btn {
+    position: relative;
+    display: inline-block;
+    float: left;
+    background: image-url("icon_close.png") right top;
+    width: 19px;
+    height: 19px;
+    left: -30px;
+  }
+}
+
+//module
+.m-veh-sel-list {
+  display: inline;
+  float: left;
+  width: 20%;
+  height: 273px;
+  list-style-type: none;
+
+  //component
+  & > li {
+    padding-bottom: 5px;
+  }
+
+  //component
+  & > li label {
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+
+  //component
+  & > li:first-child label {
+    font-weight: bold;
+  }
+
+  //component
+  .m-veh-sel-list--all-none {
+    margin-top: 50px;
+    font-size: 0.85rem;
+  }
+
+  //component
+  & > li > input[type="checkbox"] {
+    display: none;
+  }
+
+  //component
+  & > li > input[type="checkbox"] + label span {
+    display: inline-block;
+    width: 21px;
+    height: 20px;
+    margin: -1px 8px 0 0;
+    vertical-align: middle;
+    background: image-url("check_bkg.png") -21px top no-repeat;
+    cursor: pointer;
+  }
+
+  //component
+  & > li > input[type="checkbox"]:checked + label span {
+    background: image-url("check_bkg.png") left top no-repeat;
+  }
+}
+

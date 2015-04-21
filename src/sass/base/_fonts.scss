@@ -1,0 +1,7 @@
+$font-main: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+@mixin font-main {
+  font-family: $font-main;
+  font-weight: 300;
+  letter-spacing: -0.042em;
+}

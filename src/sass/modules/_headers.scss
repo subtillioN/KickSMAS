@@ -1,0 +1,48 @@
+/* HEADERS */
+
+//module instantiation
+.m-header-bar {
+  background: image-url('header_bkg.png') no-repeat 430px 5px;
+}
+
+// extendable module declaration
+%m-header {
+  display: inline;
+  float: left;
+  border-left: 3px solid #d71921;
+}
+
+// module instantiation
+.m-header {
+  @extend %m-header;
+  line-height: 0rem;
+
+  // component
+  .m-header--text1 {
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: -0.062rem;
+    position: relative;
+    margin-top: 20px;
+  }
+
+  // component
+  .m-header--text2 {
+    font-size: 1.15rem;
+    margin-top: -13px;
+    letter-spacing: -0.042rem;
+  }
+}
+
+
+//module instantiation
+.m-header2 {
+  @extend %m-header;
+  padding-left: 10px;
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin-top: 10px;
+  letter-spacing: -0.042rem;
+}
+
+
