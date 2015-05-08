@@ -63,34 +63,35 @@ The SASS directory structure for SMAS is based on the SMURF approach, and (as di
 
 The following is an example directory structure similar to what you might see in tree view in Terminal (with annotations) to show how easy it is to visually keep track the flow of the cascade in SMAS (at least at the SMAS directory level).
 
-|
-+ sass
-| app.scss                     // Root SASS file, @imports SMAS-partials, organizing the SMAS Cascade
-+ base/                         // (1) DOM-coupling, preparing CSS ground
-|	__base.scss           	 // SMAS-partial: imports and cascades the BASE files
-|	_colors.scss
-|	_element_defaults.scss	 // sets the basic element/attribute styles of the site
-|	_fonts.scss
-|	_helpers.scss            // SASS functions, base-level mixins, etc.
-|	_normalize.scss
-|	_settings.scss           // Settings files are generally loaded first, at the sub-SMACSS level.
-+ layout/                       // (2) Laying out foundations
-|	__layout.scss         	 // SMAS-partial: imports and cascades the LAYOUT files
-|	_containers.scss
-|	_grid.scss               // Example LAYOUT file
-|	_l-settings.scss         // Settings files are generally loaded first, at the sub-SMACSS level.
-+ modules/                      // (3) DOM-decoupled
-|	__modules.scss           // SMAS-partial: imports and cascades the MODULES files
-+ non-modular/                  // (4) Cascade-decoupled, overrides OK, e.g. with states in general
-|	__non-modular.scss       // SMAS-partial: imports and cascades the NON-SMACSS files
-|	_aspects.scss            // example categorization of non-modular rules in AOP terms
-|	_states.scss             // if need be, STATES can be placed here
-|	_themes.scss             // if need be, THEMES can be placed here
-| style-guide.txt              // Living style-guide to maintain the SMAS structure
+
+* sass
+  - app.scss                     // Root SASS file, @imports SMAS-partials, organizing the SMAS Cascade
+* base/                         // (1) DOM-coupling, preparing CSS ground
+  - __base.scss           	 // SMAS-partial: imports and cascades the BASE files
+  - _colors.scss
+  - _element_defaults.scss	 // sets the basic element/attribute styles of the site
+  - _fonts.scss
+  - _helpers.scss            // SASS functions, base-level mixins, etc.
+  - _normalize.scss
+  - _settings.scss           // Settings files are generally loaded first, at the sub-SMACSS level.
+* layout/                       // (2) Laying out foundations
+  - __layout.scss         	 // SMAS-partial: imports and cascades the LAYOUT files
+  - _containers.scss
+  - _grid.scss               // Example LAYOUT file
+  - _l-settings.scss         // Settings files are generally loaded first, at the sub-SMACSS level.
+* modules/                      // (3) DOM-decoupled
+  - __modules.scss           // SMAS-partial: imports and cascades the MODULES files
+* non-modular/                  // (4) Cascade-decoupled, overrides OK, e.g. with states in general
+  - __non-modular.scss       // SMAS-partial: imports and cascades the NON-SMACSS files
+  - _aspects.scss            // example categorization of non-modular rules in AOP terms
+  - _states.scss             // if need be, STATES can be placed here
+  - _themes.scss             // if need be, THEMES can be placed here
+* style-guide.txt              // Living style-guide to maintain the SMAS structure
 
 
 
-A BRIEF NOTE ON PAGES
+**A BRIEF NOTE ON PAGES**
+
 If a more page-specific structure is required, the app.scss file could be renamed e.g. 'page1.scss' or 'home.scss' with a corresponding suffix appended to the required (and multiplied) SMAS partials, such as 'layout/__layout-home.scss' and 'modules/__modules-home.scss' for page-level @import.
 
 
@@ -114,23 +115,27 @@ The general class selector naming and coding conventions below are abstracted fr
 	+ you can suddenly safely and comprehensibly share and inherit styles to DRY up your CSS and improve maintainability
 
 ###BASE:
-	Selectors: DOM-based, elements, attributes, etc
-	As discussed above, because the BASE level is tightly coupled to the DOM, BASE selectors are generally just element and attribute selectors, such as in resets or general themes.
+**Selectors**: DOM-based, elements, attributes, etc
+	
+As discussed above, because the BASE level is tightly coupled to the DOM, BASE selectors are generally just element and attribute selectors, such as in resets or general themes.
 
 ###LAYOUT:
-Selectors: 	class-based (ideally), prefixed with 'l-', e.g. '.l-single-centered-column'
+**Selectors**: 	class-based (ideally), prefixed with 'l-', e.g. '.l-single-centered-column'
 
 LAYOUT selectors could be pretty much anything, but, moving into greater decoupling from the DOM, selectors here typically and ideally would be classes. These class names should be prefixed with 'l-'.
 
 ###MODULE:
-	Module Selectors: class-based, prefixed with 'm-', e.g. '.m-box', or '.m-panel'.
-    Components: Parts of the MODULE.  When descendent selectors are not applicable, such as '& > li ', component selectors
+**Module Selectors**: class-based, prefixed with 'm-', e.g. '.m-box', or '.m-panel'.
+
+**Components**: Parts of the MODULE.  When descendent selectors are not applicable, such as '& > li ', component selectors
     				begin with the MODULE name and are followed by "--" followed by component functional descriptor, e.g.
-    				'.m-box--header' or .m-box--body.
-	Submodules: Significant variations of the MODULE.  Selector names for the submodules often begin with the MODULE name
+    				'.m-box--header' or .m-box--body
+    				
+**Submodules**: Significant variations of the MODULE.  Selector names for the submodules often begin with the MODULE name
 	 				and are followed by '_' and then a descriptor of variation, e.g. '.m-box_sidebar', meaning ".m-box
 	 				styled for the sidebar."
-    Modifiers: Slight variations of the MODULE.  Selector names for the modifiers begin with the MODULE name and are
+	 				
+**Modifiers**: Slight variations of the MODULE.  Selector names for the modifiers begin with the MODULE name and are
      				followed by a '.' and then a descriptor of what's different with the modified version of the module
      				e.g. '.m-box.no-border,' meaning "an m-box with no border."
 
@@ -196,7 +201,7 @@ Although in general it's best to limit SASS/CSS hierarchies to as flat a state a
 
 
 ###STATE:
-Selectors: 	class-based (ideally), pre- or mid-fixed with '.is-', e.g. '.is-selected' or '.m-box.is-hidden'
+**Selectors**: 	class-based (ideally), pre- or mid-fixed with '.is-', e.g. '.is-selected' or '.m-box.is-hidden'
 				Also things like pseudo-classes.
 
 STATE selectors are generally found within or near to their respective styles, such as the following.  Note the continuation of the SMAS organization at the sub-MODULE level:
@@ -236,7 +241,7 @@ For inclusiveness I'm putting this final category here mostly as a place-holder.
 *[[I was tempted to call this NON-MODULAR category ASPECTS, as in Aspect Oriented Programming, where instead of objects (or modules) there are "aspects" which slice across the object heirarchy (the cascade and module level) and address less coherent or "harder to understand" "concerns."  But perhaps that's a bit confining a term, so I think I will keep it as NON-MODULAR.  But perhaps it may suit the project or code to introduce aspects as a NON-MODULAR partial.  Also, calling it ASPECTS upsets the convenient and lovely alphabetic category and SMAS directory ordering visually mirroring the SMAS cascade, see below.]]
 
 
-__ REFERENCES __
+##REFERENCES
 
 [1] SMACSS: http://smacss.com/
 
