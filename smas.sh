@@ -47,7 +47,7 @@ touch ${SMAS_FOLDER}/base/_colors${SASS_FORMAT};
 touch ${SMAS_FOLDER}/base/_fonts${SASS_FORMAT};
 touch ${SMAS_FOLDER}/base/_element_defaults${SASS_FORMAT};
 
-APP_TEXT="@import \"base/__base\"${END_LINE}\n@import \"layout/__layout\"${END_LINE}\n@import \"modules/__modules\"${END_LINE}\n@import \"non-modular/__non-modular\"${END_LINE}";
+APP_TEXT="@import \"base/__base\"${END_LINE}\n@import \"layout/__layout\"${END_LINE}\n@import \"modules/__modules\"${END_LINE}\n@import \"nonmodular/__nonmodular\"${END_LINE}";
 
 echo ${APP_TEXT} >> ${APP_FILE};
 
