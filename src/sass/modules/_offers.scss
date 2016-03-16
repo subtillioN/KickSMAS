@@ -85,7 +85,7 @@
   cursor: pointer;
 
   // state
-  @include single-transition(margin-left, 0.25s, ease-in-out, 0);
+  //@include single-transition(margin-left, 0.25s, ease-in-out, 0);
   &:hover {
     margin-left: -2px;
   }

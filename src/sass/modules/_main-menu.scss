@@ -26,7 +26,7 @@ $logo_btn_width: 200px;
     background: image-url("main_menu_groove.png") no-repeat;
     height: $main-menu-height;
     cursor: pointer;
-    @include single-transition(background-color, 0.25s, ease-in-out, 0);
+    //@include single-transition(background-color, 0.25s, ease-in-out, 0);
   }
 
   //component
@@ -80,7 +80,7 @@ $logo_btn_width: 200px;
   background: image-url("subnav_bkg.png") repeat-x;
   height: 45px;
   top: -45px;
-  @include single-transition(top, 0.25s, ease-in-out, 0);
+  //@include single-transition(top, 0.25s, ease-in-out, 0);
 
   //state
   &.is-shown {

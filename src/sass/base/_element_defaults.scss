@@ -9,7 +9,7 @@ body {
 a {
   color: $main_font_color;
   text-decoration: none;
-  @include single-transition(color, 0.25s, ease-in-out, 0);
+  //@include single-transition(color, 0.25s, ease-in-out, 0);
 }
 
 a:hover {
